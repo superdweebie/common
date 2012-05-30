@@ -2,7 +2,7 @@
 
 namespace SdsCommon\AccessControl;
 
-interface UserInterface{
+interface RoleAwareUserInterface{
 
     public function addRoles(array $roles = array());
     
