@@ -2,7 +2,7 @@
 
 namespace SdsCommon\SoftDelete;
 
-interface SoftDelteInterface{
+interface SoftDeleteInterface{
     
     public function setDeleted($deleted);
     

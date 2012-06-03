@@ -2,6 +2,8 @@
 
 namespace SdsCommon\AccessControl;
 
+use SdsCommon\User\UserInterface;
+
 interface ControlledObjectInterface{
 
     public function setZone($zone);
