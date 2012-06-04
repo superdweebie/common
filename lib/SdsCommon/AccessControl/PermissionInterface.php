@@ -10,5 +10,5 @@ interface PermissionInterface{
 
     public function getRole();
     
-    public function __construct(Role $role, $action, $state = null);   
+    public function __construct(RoleInterface $role, $action, $state = null);   
 }
