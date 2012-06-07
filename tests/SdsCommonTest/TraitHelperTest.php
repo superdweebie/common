@@ -1,6 +1,6 @@
 <?php
 
-namespace SdsCommon\Test;
+namespace SdsCommonTest;
 
 use SdsCommon\TraitHelper;
 
