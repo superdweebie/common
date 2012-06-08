@@ -2,7 +2,7 @@
 
 namespace SdsCommon\User;
 
-interface AuthUserInterface{
+interface AuthUserInterface extends UserInterface{
        
     public function isGuest();
 
