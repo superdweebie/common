@@ -4,29 +4,29 @@
  * @package    Sds
  * @license    MIT
  */
-namespace SdsCommon\Stamp;
+namespace SdsCommon\SoftDelete;
 
 use SdsCommon\User\UserInterface;
 
 /**
- * Interface to add updated by stamp to object
+ * Interface to add soft deleted by stamp to object
  *
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface UpdatedByInterface{
+interface SoftDeletedByInterface{
 
     /**
-     * The user who updated
+     * The user who soft deleted
      *
      * @param /SdsCommon/User/UserInterface $user
      */
-    public function setUpdatedBy(UserInterface $user);
+    public function setSoftDeletedBy(UserInterface $user);
 
     /**
-     * Return the user name of the user who updated
+     * Return the user name of the user who soft deleted
      *
      * @param string
      */
-    public function getUpdatedBy();
+    public function getSoftDeletedBy();
 }

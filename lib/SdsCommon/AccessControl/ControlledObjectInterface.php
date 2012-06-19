@@ -1,26 +1,67 @@
 <?php
-
+/**
+ * @link       http://superdweebie.com
+ * @package    Sds
+ * @license    MIT
+ */
 namespace SdsCommon\AccessControl;
 
-use SdsCommon\User\UserInterface;
-
+/**
+ * Defines methods for a resource to be access controlled
+ *
+ * Access control is based on several factors:
+ *
+ * State: Each resource always has a state. That state indicates the resources
+ * progress through a workflow.
+ *
+ * Permissions: Permissions assign roles to actions in a state. That is, a
+ * permission may grant the USER role permission to do the UPDATE action when in
+ * the DRAFT state. Permissions only grant, they do not deny.
+ *
+ * @since   1.0
+ * @author  Tim Roediger <superdweebie@gmail.com>
+ */
 interface ControlledObjectInterface{
 
-    public function setZone($zone);
-    
-    public function getZone();
-    
+    /**
+     * Set the current resource state
+     *
+     * @param string $state
+     */
     public function setState($state);
-    
+
+    /**
+     * Get the current state
+     *
+     * @param string
+     */
     public function getState();
-    
-    public function addPermission($permission);
-    
-    public function addPermissions(array $permissions = array());
-    
+
+    /**
+     * Set all permissions
+     *
+     * @param array $permissions An array of PermissionInterface objects
+     */
+    public function setPermissions(array $permissions);
+
+    /**
+     * Add a permission to the permissions array
+     *
+     * @param PermissionInterface $permission
+     */
+    public function addPermission(PermissionInterface $permission);
+
+    /**
+     * Add multiple permissions
+     *
+     * @param array $permissions
+     */
+    public function addPermissions(array $permissions);
+
+    /**
+     * Get all permissions
+     *
+     * @return array
+     */
     public function getPermissions();
-    
-    public function getUserPermissions(UserInterface $user = null, $state = null);
-    
-    public function isActionAllowed($action, $state = null, UserInterface $user = null);     
 }

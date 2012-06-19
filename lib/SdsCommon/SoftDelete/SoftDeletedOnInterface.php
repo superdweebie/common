@@ -4,25 +4,25 @@
  * @package    Sds
  * @license    MIT
  */
-namespace SdsCommon\Stamp;
+namespace SdsCommon\SoftDeleted;
 
 /**
- * Interface to add updated on stamp to object
+ * Interface to add soft deleted on stamp to object
  *
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface UpdatedOnInterface{
+interface SoftDeletedOnInterface{
 
     /**
-     * The time of update
+     * The time of soft delete
      *
      * @param mixed $timestamp
      */
-    public function setUpdatedOn($timestamp);
+    public function setSoftDeletedOn($timestamp);
 
     /**
      * @return mixed
      */
-    public function getUpdatedOn();
+    public function getSoftDeletedOn();
 }
