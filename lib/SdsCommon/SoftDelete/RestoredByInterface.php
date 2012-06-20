@@ -7,24 +7,24 @@
 namespace SdsCommon\SoftDelete;
 
 /**
- * Interface to add soft deleted by stamp to object
+ * Interface to add restored by stamp to object
  *
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface SoftDeletedByInterface{
+interface RestoredByInterface{
 
     /**
-     * The user who soft deleted
+     * The username who restored
      *
      * @param string $username
      */
-    public function setSoftDeletedBy($username);
+    public function setRestoredBy($username);
 
     /**
-     * Return the user name of the user who soft deleted
+     * Return the username of the user who restored
      *
      * @param string
      */
-    public function getSoftDeletedBy();
+    public function getRestoredBy();
 }

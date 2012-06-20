@@ -6,8 +6,6 @@
  */
 namespace SdsCommon\Stamp;
 
-use SdsCommon\User\UserInterface;
-
 /**
  * Interface to add updated by stamp to object
  *
@@ -19,9 +17,9 @@ interface UpdatedByInterface{
     /**
      * The user who updated
      *
-     * @param /SdsCommon/User/UserInterface $user
+     * @param string $username
      */
-    public function setUpdatedBy(UserInterface $user);
+    public function setUpdatedBy($username);
 
     /**
      * Return the user name of the user who updated

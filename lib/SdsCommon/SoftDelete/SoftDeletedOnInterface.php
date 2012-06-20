@@ -17,12 +17,12 @@ interface SoftDeletedOnInterface{
     /**
      * The time of soft delete
      *
-     * @param mixed $timestamp
+     * @param timestamp $timestamp
      */
     public function setSoftDeletedOn($timestamp);
 
     /**
-     * @return mixed
+     * @return timestamp
      */
     public function getSoftDeletedOn();
 }

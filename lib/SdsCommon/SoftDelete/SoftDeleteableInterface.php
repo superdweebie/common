@@ -12,12 +12,12 @@ namespace SdsCommon\SoftDelete;
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface SoftDeleteInterface{
+interface SoftDeleteableInterface{
 
     /**
      * Check if object has been soft deleted
      *
-     * @return
+     * @return boolean
      */
     public function isSoftDeleted();
 

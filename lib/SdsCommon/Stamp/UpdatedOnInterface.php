@@ -17,12 +17,12 @@ interface UpdatedOnInterface{
     /**
      * The time of update
      *
-     * @param mixed $timestamp
+     * @param timestamp $timestamp
      */
     public function setUpdatedOn($timestamp);
 
     /**
-     * @return mixed
+     * @return timestamp
      */
     public function getUpdatedOn();
 }
