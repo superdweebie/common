@@ -6,8 +6,6 @@
  */
 namespace SdsCommon\Audit;
 
-use SdsCommon\User\UserInterface;
-
 /**
  * Interface for Audits. Audits are used to record the history of changes
  * to a resource
@@ -18,25 +16,25 @@ use SdsCommon\User\UserInterface;
 interface AuditInterface{
 
     /**
-     * @param mixed $oldValue
-     * @param mixed $newValue
-     * @param mixed $changedOn
-     * @param \SdsCommon\User\UserInterface $changedBy
+     * @param string $oldValue
+     * @param string $newValue
+     * @param timestamp $changedOn
+     * @param string $changedBy
      */
-    public function __construct($oldValue, $newValue, $changedOn, UserInterface $changedBy);
+    public function __construct($oldValue, $newValue, $changedOn, $changedBy);
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getOldValue();
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getNewValue();
 
     /**
-     * @return mixed
+     * @return timestamp
      */
     public function getChangedOn();
 
