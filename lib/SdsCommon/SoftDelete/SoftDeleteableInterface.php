@@ -19,7 +19,7 @@ interface SoftDeleteableInterface{
      *
      * @return boolean
      */
-    public function isSoftDeleted();
+    public function getSoftDeleted();
 
     /**
      * Soft delete the object

@@ -4,7 +4,7 @@
  * @package    Sds
  * @license    MIT
  */
-namespace SdsCommon\SoftDeleted;
+namespace SdsCommon\SoftDelete;
 
 /**
  * Interface to add soft deleted on stamp to object

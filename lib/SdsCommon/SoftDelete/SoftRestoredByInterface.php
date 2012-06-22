@@ -12,19 +12,19 @@ namespace SdsCommon\SoftDelete;
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface RestoredByInterface{
+interface SoftRestoredByInterface{
 
     /**
      * The username who restored
      *
      * @param string $username
      */
-    public function setRestoredBy($username);
+    public function setSoftRestoredBy($username);
 
     /**
      * Return the username of the user who restored
      *
      * @param string
      */
-    public function getRestoredBy();
+    public function getSoftRestoredBy();
 }
