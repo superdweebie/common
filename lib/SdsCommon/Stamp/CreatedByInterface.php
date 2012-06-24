@@ -6,8 +6,6 @@
  */
 namespace SdsCommon\Stamp;
 
-use SdsCommon\User\UserInterface;
-
 /**
  * Interface to add created by stamp to object
  *
@@ -19,9 +17,9 @@ interface CreatedByInterface{
     /**
      * The user who created
      *
-     * @param /SdsCommon/User/UserInterface $user
+     * @param string $username
      */
-    public function setCreatedBy(UserInterface $user);
+    public function setCreatedBy($username);
 
     /**
      * Return the user name of the user who created

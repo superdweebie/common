@@ -4,25 +4,25 @@
  * @package    Sds
  * @license    MIT
  */
-namespace SdsCommon\Stamp;
+namespace SdsCommon\SoftDelete;
 
 /**
- * Interface to add created on stamp to object
+ * Interface to add restored on stamp to object
  *
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface CreatedOnInterface{
+interface SoftRestoredOnInterface{
 
     /**
-     * The time of create
+     * The time of restore
      *
      * @param timestamp $timestamp
      */
-    public function setCreatedOn($timestamp);
+    public function setSoftRestoredOn($timestamp);
 
     /**
      * @return timestamp
      */
-    public function getCreatedOn();
+    public function getSoftRestoredOn();
 }
