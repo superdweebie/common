@@ -34,6 +34,12 @@ interface ZoneAwareObjectInterface {
     public function addZone($zone);
 
     /**
+     *
+     * @param string $zone
+     */
+    public function removeZone($zone);
+    
+    /**
      * Get the zone array
      *
      * @return array
