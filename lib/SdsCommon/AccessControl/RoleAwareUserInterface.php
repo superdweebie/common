@@ -24,13 +24,6 @@ interface RoleAwareUserInterface extends UserInterface{
     public function setRoles(array $roles);
 
     /**
-     * Add multiple roles to a user
-     *
-     * @param array $roles array of strings
-     */
-    public function addRoles(array $roles);
-
-    /**
      * Add a single role
      *
      * @param string $role

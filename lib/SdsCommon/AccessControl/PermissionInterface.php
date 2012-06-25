@@ -6,20 +6,15 @@
  */
 namespace SdsCommon\AccessControl;
 
+use SdsCommon\State\StateAwareInterface;
+
 /**
  * Inteface to define a permission on an ControlledObject
  *
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface PermissionInterface{
-
-    /**
-     * Get the permisson state
-     *
-     * @return string
-     */
-    public function getState();
+interface PermissionInterface extends StateAwareInterface{
 
     /**
      * Get the permission action

@@ -17,30 +17,40 @@ class Action {
     /**
      * Create a new resource
      */
-    const CREATE = 'create';
+    const create = 'create';
 
     /**
      * Access a resouce and read it's content
      */
-    const READ = 'read';
+    const read = 'read';
 
     /**
      * Change a resouce's content
      */
-    const UPDATE = 'update';
+    const update = 'update';
 
     /**
      * Mark a resouce as deleted, but do not actually remove it
      */
-    const SOFT_DELETE = 'soft-delete';
+    const softDelete = 'softDelete';
 
     /**
      * Unmark a resource as deleted
      */
-    const RESTORE = 'restore';
+    const restore = 'restore';
+
+    /**
+     * Mark a resouce as frozen
+     */
+    const freeze = 'freeze';
+
+    /**
+     * Unmark a resouce as frozen
+     */
+    const thaw = 'thaw';
 
     /**
      * Make a resource disappear, never to come back again!
      */
-    const DELETE = 'delete';
+    const delete = 'delete';
 }
