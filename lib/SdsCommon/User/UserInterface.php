@@ -23,14 +23,4 @@ interface UserInterface{
      * @param string $username
      */
     public function setUsername($username);
-
-    /**
-     * @return boolean
-     */
-    public function isGuest();
-
-    /**
-     * @param boolean $isGuest
-     */
-    public function setIsGuest($isGuest);
 }
