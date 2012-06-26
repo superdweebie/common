@@ -15,8 +15,7 @@ namespace SdsCommon\AccessControl;
 interface PermissionInterface{
 
     /**
-     * Get the permisson state
-     *
+     * 
      * @return string
      */
     public function getState();

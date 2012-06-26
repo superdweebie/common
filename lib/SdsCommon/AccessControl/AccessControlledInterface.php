@@ -21,21 +21,7 @@ namespace SdsCommon\AccessControl;
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface ControlledObjectInterface{
-
-    /**
-     * Set the current resource state
-     *
-     * @param string $state
-     */
-    public function setState($state);
-
-    /**
-     * Get the current state
-     *
-     * @param string
-     */
-    public function getState();
+interface AccessControlledInterface{
 
     /**
      * Set all permissions
@@ -52,11 +38,10 @@ interface ControlledObjectInterface{
     public function addPermission(PermissionInterface $permission);
 
     /**
-     * Add multiple permissions
      *
-     * @param array $permissions
+     * @param \SdsCommon\AccessControl\PermissionInterface $permission
      */
-    public function addPermissions(array $permissions);
+    public function removePermission(PermissionInterface $permission);
 
     /**
      * Get all permissions

@@ -17,20 +17,20 @@ class Role {
     /**
      * Denotes a user that is not authenticated
      */
-    const GUEST = 'guest';
+    const guest = 'guest';
 
     /**
      * A user who has been authenticated
      */
-    const USER = 'user';
+    const user = 'user';
 
     /**
      * An authenticated user who has elevated rights
      */
-    const ADMIN = 'admin';
+    const admin = 'admin';
 
     /**
      * An authenticated user who has the highest rights
      */
-    const SUPER_ADMIN = 'super-admin';
+    const superAdmin = 'superAdmin';
 }

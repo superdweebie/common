@@ -17,7 +17,7 @@ namespace SdsCommon\Zone;
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface ZoneAwareObjectInterface {
+interface ZoneAwareInterface {
 
     /**
      * Set all possible zones
@@ -32,6 +32,12 @@ interface ZoneAwareObjectInterface {
      * @param string $zone
      */
     public function addZone($zone);
+
+    /**
+     *
+     * @param string $zone
+     */
+    public function removeZone($zone);
 
     /**
      * Get the zone array

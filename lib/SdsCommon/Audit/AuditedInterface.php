@@ -12,7 +12,7 @@ namespace SdsCommon\Audit;
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface AuditedObjectInterface{
+interface AuditedInterface{
 
     /**
      * Add a new audit to the audit collection

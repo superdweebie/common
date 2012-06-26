@@ -4,9 +4,7 @@
  * @package    Sds
  * @license    MIT
  */
-namespace SdsCommon\AccessControl;
-
-use SdsCommon\User\UserInterface;
+namespace SdsCommon\User;
 
 /**
  * Extends the UserInterface to give a user roles
@@ -22,13 +20,6 @@ interface RoleAwareUserInterface extends UserInterface{
      * @param array $roles array of strings
      */
     public function setRoles(array $roles);
-
-    /**
-     * Add multiple roles to a user
-     *
-     * @param array $roles array of strings
-     */
-    public function addRoles(array $roles);
 
     /**
      * Add a single role
