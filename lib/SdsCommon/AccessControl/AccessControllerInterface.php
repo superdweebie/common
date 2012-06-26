@@ -6,18 +6,19 @@
  */
 namespace SdsCommon\AccessControl;
 
+use SdsCommon\User\RoleAwareUserInterface;
+
 /**
  * Defines methods for a manager object to check permssions
  *
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-class ControlledObjectManagerInterface extends ActiveUserAwareInterface {
+interface AccessControllerInterface {
 
     /**
-     * Get the permissions of the supplied user for the supplied state
+     * Get the permitted actions for the supplied user for the supplied state
      * on the supplied object.
-     * If no user is supplied, the activeUser is assumed.
      * If no state is supplied, the current state of the object is assumed
      *
      * @param ControlledObjectInterface $object
@@ -26,16 +27,15 @@ class ControlledObjectManagerInterface extends ActiveUserAwareInterface {
      *
      * @return array
      */
-    public function getUserPermissions(
-        ControlledObjectInterface $object,
-        RoleAwareUserInterface $user = null,
+    static public function getAllowedActions(
+        AccessControlledInterface $object,
+        RoleAwareUserInterface $user,
         $state = null
     );
 
     /**
      * Check if the given user is allowed to do the given action on the given
      * object.
-     * If no user is supplied, the activeUser is assumed.
      * If no state is supplied, the current state of the object is assumed
      *
      * @param ControlledObjectInterface $object
@@ -45,10 +45,10 @@ class ControlledObjectManagerInterface extends ActiveUserAwareInterface {
      *
      * @return boolean
      */
-    public function isActionAllowed(
-        ControlledObjectInterface $object,
+    static public function isActionAllowed(
+        AccessControlledInterface $object,
         $action,
-        RoleAwareUserInterface $user = null,
+        RoleAwareUserInterface $user,
         $state = null
     );
 }

@@ -24,18 +24,6 @@ namespace SdsCommon\AccessControl;
 interface AccessControlledInterface{
 
     /**
-     * Set the current resource state
-     *
-     * @param string $state
-     */
-    public function setState($state);
-
-    /**
-     * @return string
-     */
-    public function getState();
-
-    /**
      * Set all permissions
      *
      * @param array $permissions An array of PermissionInterface objects

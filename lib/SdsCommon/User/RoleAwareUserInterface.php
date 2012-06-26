@@ -4,9 +4,7 @@
  * @package    Sds
  * @license    MIT
  */
-namespace SdsCommon\AccessControl;
-
-use SdsCommon\User\UserInterface;
+namespace SdsCommon\User;
 
 /**
  * Extends the UserInterface to give a user roles
