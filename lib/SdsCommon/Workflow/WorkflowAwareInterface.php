@@ -6,12 +6,14 @@
  */
 namespace SdsCommon\Workflow;
 
+use SdsCommon\State\StateAwareInterface;
+
 /**
  *
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface WorkflowAwareInterface {
+interface WorkflowAwareInterface extends StateAwareInterface {
 
     /**
      *

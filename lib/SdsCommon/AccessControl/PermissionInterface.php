@@ -15,7 +15,14 @@ namespace SdsCommon\AccessControl;
 interface PermissionInterface{
 
     /**
-     * 
+     * @param string $role
+     * @param string $action
+     * @param string $state
+     */
+    public function __construct($role, $action, $state = null);
+
+    /**
+     *
      * @return string
      */
     public function getState();
@@ -35,9 +42,16 @@ interface PermissionInterface{
     public function getRole();
 
     /**
-     * @param string $role
-     * @param string $action
-     * @param string $state
+     * Flags if the state of the permission is equal to the state of the parent
+     * object
+     *
+     * @return boolean
      */
-    public function __construct($role, $action, $state = null);
+    public function getStateEqualToParent();
+
+    /**
+     *
+     * @param boolean $value
+     */
+    public function setStateEqualToParent($value);
 }
