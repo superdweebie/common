@@ -6,10 +6,8 @@
  */
 namespace SdsCommon\Workflow;
 
-use Doctrine\Common\Collections\ArrayCollection;
-
 /**
- * 
+ *
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
@@ -17,16 +15,16 @@ interface WorkflowInterface
 {
 
     /**
-     * 
+     *
      * @param string $startState
      * @param array $possibleStates
-     * @param \Doctrine\Common\Collections\ArrayCollection $possibleTransforms
+     * @param \Doctrine\Common\Collections\ArrayCollection $transitions
      * @param array $vars
      */
     public function __construct(
         $startState,
         array $possibleStates,
-        ArrayCollection $possibleTransforms,
+        array $transitions,
         array $vars = array()
     );
 
@@ -49,7 +47,7 @@ interface WorkflowInterface
      *
      * @return array
      */
-    public function getPossibleTransitions();
+    public function getTransitions();
 
     /**
      * An array to store arbitary workflow variables
