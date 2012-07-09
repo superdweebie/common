@@ -1,9 +1,9 @@
 {
-    "name": "superdweebie/SdsCommon",
+    "name": "superdweebie/common",
     "description": "Library used by many of the other Sds libaries and modules",
     "type": "library",
     "keywords": [],
-    "homepage": "http://github.com/superdweebie/SdsCommon",
+    "homepage": "http://github.com/superdweebie/common",
     "authors": [
         {
             "name": "Tim Roediger",
@@ -11,12 +11,12 @@
         }
     ],
     "require": {
-        "php": ">=5.4"      
+        "php": ">=5.4"
     },
 
     "autoload": {
         "psr-0": {
-            "SdsCommon": "lib/"           
+            "Sds\\Common": "lib/"
         }
     }
 }

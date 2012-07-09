@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdoc>
-    <title>My Title</title>
+    <title>Sds Common</title>
     <parser>
         <target>output</target>
         <markers>
@@ -27,6 +27,6 @@
         <template name="responsive" />
     </transformations>
     <files>
-        <directory>../../lib</directory>	
+        <directory>../../lib</directory>
     </files>
 </phpdoc>
