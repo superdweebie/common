@@ -15,20 +15,6 @@ interface WorkflowInterface
 {
 
     /**
-     *
-     * @param string $startState
-     * @param array $possibleStates
-     * @param \Doctrine\Common\Collections\ArrayCollection $transitions
-     * @param array $vars
-     */
-    public function __construct(
-        $startState,
-        array $possibleStates,
-        array $transitions,
-        array $vars = array()
-    );
-
-    /**
      * The state the object will be in immediately after creation
      *
      * @return string
