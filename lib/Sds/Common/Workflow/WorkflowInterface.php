@@ -13,7 +13,6 @@ namespace Sds\Common\Workflow;
  */
 interface WorkflowInterface
 {
-
     /**
      * The state the object will be in immediately after creation
      *
@@ -36,15 +35,9 @@ interface WorkflowInterface
     public function getTransitions();
 
     /**
-     * An array to store arbitary workflow variables
+     * Called each time the document state is changed
      *
-     * @return array
+     * @param object $document
      */
-    public function getVars();
-
-    /**
-     *
-     * @param array $vars
-     */
-    public function setVars(array $vars);
+    public function update($document);
 }
