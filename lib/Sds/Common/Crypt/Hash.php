@@ -43,7 +43,7 @@ class Hash implements SaltInterface {
     public static function hashPassword(AuthInterface $identity, $plaintext){
         $dbPassword = $identity->getPassword();
         $salt = substr($dbPassword, 0, self::saltLength);
-        return self::encrypt($salt, $plaintext);
+        return self::hash($salt, $plaintext);
     }
 
     /**
@@ -55,7 +55,7 @@ class Hash implements SaltInterface {
         return substr(str_shuffle(str_repeat(self::chars,10)),0,self::saltLength);
     }
     
-    public static function getHash(){
+    public static function getSalt(){
         return self::generateSalt();
     }
 }

@@ -4,7 +4,7 @@
  * @package    Sds
  * @license    MIT
  */
-namespace Sds\User\Auth;
+namespace Sds\Common\User;
 
 /**
  *
