@@ -12,7 +12,7 @@ use Sds\Common\User\AuthInterface;
  *
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
- * 
+ *
  */
 class Hash implements SaltInterface {
 
@@ -23,13 +23,17 @@ class Hash implements SaltInterface {
     /**
      * Creates a sha1 hash of a string using a salt, and prepends that salt
      * to the return string
-     * 
+     *
      * @param string $salt
      * @param string $plaintext
      * @return string
      */
     public static function hash($salt, $plaintext){
-        return $salt.sha1($salt.$plaintext);
+        return sha1($salt.$plaintext);
+    }
+
+    public static function hashAndPrependSalt($salt, $plaintext){
+        return $salt . self::hash($salt, $plaintext);
     }
     
     /**
@@ -43,7 +47,7 @@ class Hash implements SaltInterface {
     public static function hashPassword(AuthInterface $identity, $plaintext){
         $dbPassword = $identity->getPassword();
         $salt = substr($dbPassword, 0, self::saltLength);
-        return self::hash($salt, $plaintext);
+        return self::hashAndPrependSalt($salt, $plaintext);
     }
 
     /**
@@ -54,7 +58,7 @@ class Hash implements SaltInterface {
     public static function generateSalt(){
         return substr(str_shuffle(str_repeat(self::chars,10)),0,self::saltLength);
     }
-    
+
     public static function getSalt(){
         return self::generateSalt();
     }
