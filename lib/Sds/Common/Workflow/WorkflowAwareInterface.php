@@ -14,16 +14,4 @@ use Sds\Common\State\StateAwareInterface;
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
 interface WorkflowAwareInterface extends StateAwareInterface {
-
-    /**
-     *
-     * @param \Sds\Common\Workflow\WorkflowInterface $workflow
-     */
-    public function setWorkflow(WorkflowInterface $workflow);
-
-    /**
-     *
-     * @return \Sds\Common\Workflow\WorkflowInterface
-     */
-    public function getWorkflow();
 }
