@@ -1,0 +1,23 @@
+{
+    "name": "superdweebie/common",
+    "description": "Library used by many of the other Sds libaries and modules",
+    "type": "library",
+    "keywords": [],
+    "homepage": "http://github.com/superdweebie/common",
+    "authors": [
+        {
+            "name": "Tim Roediger",
+            "email": "superdweebie@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "zendframework/zendframework": "dev-master"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Sds\\Common": "lib/"
+        }
+    }
+}
