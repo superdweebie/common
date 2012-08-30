@@ -11,14 +11,14 @@ namespace Sds\Common\Validator;
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-class StandardNameArrayValidator extends AbstractValidator
+class IdentifierArrayValidator extends AbstractValidator
 {
 
     public function isValid($value)
     {
         $this->messages = [];
 
-        $validator = new StandardNameValidator();
+        $validator = new IdentifierValidator();
         $result = true;
 
         foreach ($value as $name) {

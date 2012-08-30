@@ -2,17 +2,19 @@
 
 namespace Sds\Common\Test\Validator;
 
-use Sds\Common\Validator\StandardNameArrayValidator;
+use Sds\Common\Validator\LengthValidator;
 
-class StandardNameArrayValidatorTest extends \PHPUnit_Framework_TestCase {
+class LengthValidatorTest extends \PHPUnit_Framework_TestCase {
 
     public function testValidator(){
 
-        $validator = new StandardNameArrayValidator;
+        $validator = new LengthValidator(1, 5);
 
         $testArray = [
-            [true, ['username', 'username1', '1username']],
-            [false, ['username1', 'u']]
+            [true, '1'],
+            [true, '12345'],
+            [false, ''],
+            [false, '123456']
         ];
 
         foreach ($testArray as $item) {

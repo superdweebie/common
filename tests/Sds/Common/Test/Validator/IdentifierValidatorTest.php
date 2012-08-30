@@ -2,13 +2,13 @@
 
 namespace Sds\Common\Test\Validator;
 
-use Sds\Common\Validator\StandardNameValidator;
+use Sds\Common\Validator\IdentifierValidator;
 
-class StandardNameValidatorTest extends \PHPUnit_Framework_TestCase {
+class IdentifierValidatorTest extends \PHPUnit_Framework_TestCase {
 
     public function testValidator(){
 
-        $validator = new StandardNameValidator;
+        $validator = new IdentifierValidator;
 
         $testArray = [
             [true, 'username'],
