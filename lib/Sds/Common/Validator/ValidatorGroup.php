@@ -27,20 +27,20 @@ class ValidatorGroup extends AbstractValidator
         $result = true;
 
         foreach($this->validators as $validator){
-            if ($validator->getSkipOnPass() && $result){
+            if ($result && method_exists($validator, 'getSkipOnPass') && $validator->getSkipOnPass()){
                 continue;
             }
-            if ($validator->getSkipOnFail() && ! $result){
+            if (! $result && method_exists($validator, 'getSkipOnFail') && $validator->getSkipOnFail()){
                 continue;
             }
             if ( ! $validator->isValid($value)){
                 $result = false;
                 $this->messages = array_merge($this->messages, $validator->getMessages());
-                if ($validator->getHaltOnFail()){
+                if (method_exists($validator, 'getHaltOnFail') && $validator->getHaltOnFail()){
                     return $result;
                 }
             }
-            if ($validator->getHaltOnPass()){
+            if (method_exists($validator, 'getHaltOnPass') && $validator->getHaltOnPass()){
                 return $result;
             }
         }
