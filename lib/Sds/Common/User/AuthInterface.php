@@ -14,18 +14,6 @@ namespace Sds\Common\User;
 interface AuthInterface {
 
     /**
-     *
-     * @return boolean
-     */
-    public function getIsGuest();
-
-    /**
-     *
-     * @param boolean $isGuest
-     */
-    public function setIsGuest($isGuest);
-
-    /**
      * Returns encrypted password
      *
      * @return string
