@@ -15,14 +15,14 @@ namespace Sds\Common\Freeze;
 interface FrozenByInterface{
 
     /**
-     * The user who froze
+     * The identity who froze
      *
-     * @param string $username
+     * @param string $name
      */
-    public function setFrozenBy($username);
+    public function setFrozenBy($name);
 
     /**
-     * Return the user name of the user who froze
+     * Return the name of the identity who froze
      *
      * @param string
      */

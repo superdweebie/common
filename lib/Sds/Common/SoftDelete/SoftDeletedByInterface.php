@@ -15,14 +15,14 @@ namespace Sds\Common\SoftDelete;
 interface SoftDeletedByInterface{
 
     /**
-     * The user who soft deleted
+     * The identity who soft deleted
      *
-     * @param string $username
+     * @param string $name
      */
-    public function setSoftDeletedBy($username);
+    public function setSoftDeletedBy($name);
 
     /**
-     * Return the user name of the user who soft deleted
+     * Return the name of the identity who soft deleted
      *
      * @param string
      */

@@ -15,7 +15,7 @@ namespace Sds\Common\AccessControl;
  * progress through a workflow.
  *
  * Permissions: Permissions assign roles to actions in a state. That is, a
- * permission may grant the USER role permission to do the UPDATE action when in
+ * permission may grant the IDENTITY role permission to do the UPDATE action when in
  * the DRAFT state. Permissions only grant, they do not deny.
  *
  * @since   1.0

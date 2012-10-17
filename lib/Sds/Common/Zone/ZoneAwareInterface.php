@@ -10,7 +10,7 @@ namespace Sds\Common\Zone;
  * Defines methods for a resource aware of zones
  *
  * Zone: Each resource may be assigned to multiple zones, however it is assumed
- * that just as there will only be one active user at any time, there will also
+ * that just as there will only be one active identity at any time, there will also
  * be only one active zone at any time. A zone may indicate a business
  * department, geographical area, or such.
  *

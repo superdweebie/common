@@ -6,8 +6,6 @@
  */
 namespace Sds\Common\AccessControl;
 
-use Sds\Common\User\RoleAwareUserInterface;
-
 /**
  * Defines methods for a manager object to check permssions
  *
@@ -17,30 +15,30 @@ use Sds\Common\User\RoleAwareUserInterface;
 interface AccessControllerInterface {
 
     /**
-     * Get the permitted actions for the supplied user for the supplied state
+     * Get the permitted actions for the supplied identity for the supplied state
      * on the supplied object.
      * If no state is supplied, the current state of the object is assumed
      *
      * @param ControlledObjectInterface $object
-     * @param RoleAwareUserInterface $user
+     * @param array $roles
      * @param state
      *
      * @return array
      */
     static public function getAllowedActions(
         AccessControlledInterface $object,
-        RoleAwareUserInterface $user,
+        array $roles = [],
         $state = null
     );
 
     /**
-     * Check if the given user is allowed to do the given action on the given
+     * Check if the given identity is allowed to do the given action on the given
      * object.
      * If no state is supplied, the current state of the object is assumed
      *
      * @param ControlledObjectInterface $object
      * @param string $action
-     * @param RoleAwareUserInterface $user
+     * @param array $roles
      * @param state
      *
      * @return boolean
@@ -48,7 +46,7 @@ interface AccessControllerInterface {
     static public function isActionAllowed(
         AccessControlledInterface $object,
         $action,
-        RoleAwareUserInterface $user,
+        array $roles = [],
         $state = null
     );
 }

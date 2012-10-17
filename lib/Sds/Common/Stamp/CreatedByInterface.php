@@ -15,14 +15,14 @@ namespace Sds\Common\Stamp;
 interface CreatedByInterface{
 
     /**
-     * The user who created
+     * The identity who created
      *
-     * @param string $username
+     * @param string $name
      */
-    public function setCreatedBy($username);
+    public function setCreatedBy($name);
 
     /**
-     * Return the user name of the user who created
+     * Return the name of the identity who created
      *
      * @param string
      */

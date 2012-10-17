@@ -15,14 +15,14 @@ namespace Sds\Common\Stamp;
 interface UpdatedByInterface{
 
     /**
-     * The user who updated
+     * The identity who updated
      *
-     * @param string $username
+     * @param string $name
      */
-    public function setUpdatedBy($username);
+    public function setUpdatedBy($name);
 
     /**
-     * Return the user name of the user who updated
+     * Return the name of the identity who updated
      *
      * @param string
      */

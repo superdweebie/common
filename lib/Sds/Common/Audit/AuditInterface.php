@@ -39,7 +39,6 @@ interface AuditInterface{
     public function getChangedOn();
 
     /**
-     * Will return the username of the user passed to the constructor
      *
      * @return string
      */

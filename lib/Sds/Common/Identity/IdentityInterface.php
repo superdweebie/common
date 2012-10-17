@@ -4,23 +4,23 @@
  * @package    Sds
  * @license    MIT
  */
-namespace Sds\Common\User;
+namespace Sds\Common\Identity;
 
 /**
- * Basic user interface
+ * Basic identity interface
  *
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface UserInterface{
+interface IdentityInterface{
 
     /**
      * @return string
      */
-    public function getUsername();
+    public function getName();
 
     /**
-     * @param string $username
+     * @param string $name
      */
-    public function setUsername($username);
+    public function setName($name);
 }

@@ -15,22 +15,22 @@ namespace Sds\Common\AccessControl\Constant;
 class Role {
 
     /**
-     * Denotes a user that is not authenticated
+     * Denotes an identity that is not authenticated
      */
     const guest = 'guest';
 
     /**
-     * A user who has been authenticated
+     * A identity who has been authenticated
      */
     const user = 'user';
 
     /**
-     * An authenticated user who has elevated rights
+     * An authenticated identity who has elevated rights
      */
     const admin = 'admin';
 
     /**
-     * An authenticated user who has the highest rights
+     * An authenticated identity who has the highest rights
      */
     const superAdmin = 'superAdmin';
 }

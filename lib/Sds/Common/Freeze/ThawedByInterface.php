@@ -15,14 +15,14 @@ namespace Sds\Common\Freeze;
 interface ThawedByInterface{
 
     /**
-     * The username who thawed
+     * The identity who thawed
      *
-     * @param string $username
+     * @param string $identity
      */
-    public function setThawedBy($username);
+    public function setThawedBy($name);
 
     /**
-     * Return the username of the user who thawed
+     * Return the name of the identity who thawed
      *
      * @param string
      */

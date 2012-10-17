@@ -4,25 +4,25 @@
  * @package    Sds
  * @license    MIT
  */
-namespace Sds\Common\User;
+namespace Sds\Common\Identity;
 
 /**
  *
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-interface AuthInterface {
+interface CredentialInterface {
 
     /**
-     * Returns encrypted password
+     * Returns credential (normally hashed)
      *
      * @return string
      */
-    public function getPassword();
+    public function getCredential();
 
     /**
      *
      * @param string $plaintext
      */
-    public function setPassword($plaintext);
+    public function setCredential($plaintext);
 }

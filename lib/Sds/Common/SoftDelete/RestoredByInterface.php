@@ -15,14 +15,14 @@ namespace Sds\Common\SoftDelete;
 interface RestoredByInterface{
 
     /**
-     * The username who restored
+     * The identity who restored
      *
-     * @param string $username
+     * @param string $name
      */
-    public function setRestoredBy($username);
+    public function setRestoredBy($name);
 
     /**
-     * Return the username of the user who restored
+     * Return the name of the identity who restored
      *
      * @param string
      */

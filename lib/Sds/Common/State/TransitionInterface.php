@@ -4,7 +4,7 @@
  * @package    Sds
  * @license    MIT
  */
-namespace Sds\Common\Workflow;
+namespace Sds\Common\State;
 
 /**
  *
@@ -33,4 +33,12 @@ interface TransitionInterface
      * @return string
      */
     public function getToState();
+
+    /**
+     * Return the action name for this transition.
+     * Used for access control
+     *
+     * @return string
+     */
+    public function getAction();
 }

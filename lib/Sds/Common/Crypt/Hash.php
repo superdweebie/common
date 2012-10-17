@@ -6,7 +6,7 @@
  */
 namespace Sds\Common\Crypt;
 
-use Sds\Common\User\AuthInterface;
+use Sds\Common\Identity\CredentialInterface;
 
 /**
  *
@@ -44,8 +44,8 @@ class Hash implements HashInterface, SaltInterface {
      * @param string $plaintext
      * @return string
      */
-    public static function hashPassword(AuthInterface $identity, $plaintext){
-        $dbPassword = $identity->getPassword();
+    public static function hashCredential(CredentialInterface $identity, $plaintext){
+        $dbPassword = $identity->getCredential();
         $salt = substr($dbPassword, 0, self::saltLength);
         return self::hashAndPrependSalt($salt, $plaintext);
     }
