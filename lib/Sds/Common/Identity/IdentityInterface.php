@@ -17,10 +17,10 @@ interface IdentityInterface{
     /**
      * @return string
      */
-    public function getName();
+    public function getIdentityName();
 
     /**
      * @param string $name
      */
-    public function setName($name);
+    public function setIdentityName($name);
 }
