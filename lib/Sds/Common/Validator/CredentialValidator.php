@@ -11,7 +11,7 @@ namespace Sds\Common\Validator;
  * @since   1.0
  * @author  Tim Roediger <superdweebie@gmail.com>
  */
-class PasswordValidator extends AbstractValidator
+class CredentialValidator extends AbstractValidator
 {
 
     protected $lengthRegEx = '/^.{6,40}$/';

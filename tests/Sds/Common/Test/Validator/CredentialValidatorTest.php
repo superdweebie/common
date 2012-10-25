@@ -2,13 +2,13 @@
 
 namespace Sds\Common\Test\Validator;
 
-use Sds\Common\Validator\PasswordValidator;
+use Sds\Common\Validator\CredentialValidator;
 
-class PasswordValidatorTest extends \PHPUnit_Framework_TestCase {
+class CredentialValidatorTest extends \PHPUnit_Framework_TestCase {
 
     public function testValidator(){
 
-        $validator = new PasswordValidator;
+        $validator = new CredentialValidator;
 
         $testArray = [
             [true, 'password1'],
