@@ -18,18 +18,22 @@ class ValidatorFactory
 
         $validators = [];
 
-        foreach ($validatorDefinitions as $key=>$value){
-            if ($value instanceof AbstractValidator){
-                $validators[] = $value;
-            } else {
-                $validators[] = self::create($key, $value);
-            }
+        foreach ($validatorDefinitions as $validatorDefinition){
+            $validators[] = self::create($validatorDefinition);
         }
 
         return new ValidatorGroup($validators);
     }
 
     public static function create($arg1, $arg2 = null){
+
+        if ($arg1 instanceof AbstractValidator){
+            return $arg1;
+        }
+
+        if (is_array($arg1) && !isset($arg1['class'])){
+            return self::createGroup($arg1);
+        }
 
         if (is_string($arg1)){
             $class = $arg1;
