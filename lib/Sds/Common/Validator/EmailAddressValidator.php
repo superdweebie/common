@@ -24,16 +24,16 @@ class EmailAddressValidator extends AbstractValidator
 
     public function isValid($value){
 
-        $this->messages = [];
+        $messages = [];
 
         $result = true;
 
         $validator = new EmailAddress();
         if ( ! $validator->isValid($value) ){
             $result = false;
-            $this->messages[] = 'Must be a valid email address';
+            $messages[] = 'Must be a valid email address';
         }
 
-        return $result;
+        return new ValidatorResult($result, $messages);
     }
 }

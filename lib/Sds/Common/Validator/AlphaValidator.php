@@ -18,15 +18,15 @@ class AlphaValidator extends AbstractValidator
 
     public function isValid($value){
 
-        $this->messages = [];
+        $messages = [];
 
         $result = true;
 
         if ( ! preg_match($this->regEx, $value)){
             $result = false;
-            $this->messages[] = 'Must contain only the characters a-z, or A-Z.';
+            $messages[] = 'Must contain only the characters a-z, or A-Z.';
         }
-        
-        return $result;
+
+        return new ValidatorResult($result, $messages);
     }
 }

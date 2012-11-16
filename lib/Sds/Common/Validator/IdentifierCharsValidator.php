@@ -18,15 +18,15 @@ class IdentifierCharsValidator extends AbstractValidator
 
     public function isValid($value){
 
-        $this->messages = [];
+        $messages = [];
 
         $result = true;
 
         if ( ! preg_match($this->regEx, $value)){
             $result = false;
-            $this->messages[] = 'Must contain only the characters a-z, A-Z, 0-9, _, or -.';
+            $messages[] = 'Must contain only the characters a-z, A-Z, 0-9, _, or -.';
         }
 
-        return $result;
+        return new ValidatorResult($result, $messages);
     }
 }

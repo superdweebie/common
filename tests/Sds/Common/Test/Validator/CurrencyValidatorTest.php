@@ -26,14 +26,14 @@ class CurrencyValidatorTest extends \PHPUnit_Framework_TestCase {
             [false, '0.0.111'],
             [false, '1.1.111'],
             [false, '$1.10'],
-            [false, '1.a']             
+            [false, '1.a']
         ];
 
         foreach ($testArray as $item) {
             if ($item[0]){
-                $this->assertTrue($validator->isValid($item[1]));
+                $this->assertTrue($validator->isValid($item[1])->getResult());
             } else {
-                $this->assertFalse($validator->isValid($item[1]));
+                $this->assertFalse($validator->isValid($item[1])->getResult());
             }
         }
     }

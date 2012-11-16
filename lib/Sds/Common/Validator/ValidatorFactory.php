@@ -14,17 +14,6 @@ namespace Sds\Common\Validator;
 class ValidatorFactory
 {
 
-    public static function createGroup($validatorDefinitions){
-
-        $validators = [];
-
-        foreach ($validatorDefinitions as $validatorDefinition){
-            $validators[] = self::create($validatorDefinition);
-        }
-
-        return new ValidatorGroup($validators);
-    }
-
     public static function create($arg1, $arg2 = null){
 
         if ($arg1 instanceof AbstractValidator){
@@ -53,5 +42,16 @@ class ValidatorFactory
         }
 
         return $validator;
+    }
+
+    protected static function createGroup($validatorDefinitions){
+
+        $validators = [];
+
+        foreach ($validatorDefinitions as $validatorDefinition){
+            $validators[] = self::create($validatorDefinition);
+        }
+
+        return new ValidatorGroup($validators);
     }
 }

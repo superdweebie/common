@@ -18,15 +18,15 @@ class RequiredValidator extends AbstractValidator
 
     public function isValid($value){
 
-        $this->messages = [];
+        $messages = [];
 
         $result = true;
 
         if ( !isset($value) || $value == ''){
             $result = false;
-            $this->messages[] = 'This value is required.';
+            $messages[] = 'This value is required.';
         }
 
-        return $result;
+        return new ValidatorResult($result, $messages);
     }
 }

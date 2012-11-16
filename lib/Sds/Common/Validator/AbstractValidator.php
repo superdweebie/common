@@ -14,8 +14,6 @@ namespace Sds\Common\Validator;
 abstract class AbstractValidator implements ValidatorInterface
 {
 
-    protected $messages = [];
-
     //haltOnPass: boolean
     //     If this validator is part of a ValidatorGroup, setting
     //     to true will stop any Validators after this one
@@ -39,10 +37,6 @@ abstract class AbstractValidator implements ValidatorInterface
     //     to true will skip evaluating this validator, if a previous
     //     validator has already evaluated to false
     protected $skipOnFail = false;
-
-    public function getMessages(){
-        return $this->messages;
-    }
 
     public function getHaltOnPass() {
         return $this->haltOnPass;
@@ -75,4 +69,6 @@ abstract class AbstractValidator implements ValidatorInterface
     public function setSkipOnFail($skipOnFail) {
         $this->skipOnFail = $skipOnFail;
     }
+
+    abstract public function isValid($value);
 }

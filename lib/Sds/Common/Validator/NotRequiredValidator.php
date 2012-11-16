@@ -16,7 +16,7 @@ class NotRequiredValidator extends AbstractValidator
 
     public function isValid($value){
 
-        $this->messages = [];
+        $messages = [];
 
         $result = true;
         $this->haltOnPass = false;
@@ -25,6 +25,6 @@ class NotRequiredValidator extends AbstractValidator
             $this->haltOnPass = true;
         }
 
-        return $result;
+        return new ValidatorResult($result, $messages);
     }
 }

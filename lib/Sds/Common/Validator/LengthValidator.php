@@ -25,7 +25,7 @@ class LengthValidator extends AbstractValidator
 
     public function isValid($value){
 
-        $this->messages = [];
+        $messages = [];
 
         $result = true;
 
@@ -33,9 +33,9 @@ class LengthValidator extends AbstractValidator
 
         if ( ! preg_match($regEx, $value)){
             $result = false;
-            $this->messages[] = 'Must be between ' . $this->min . ' and ' . $this->max . ' characters long.';
+            $messages[] = 'Must be between ' . $this->min . ' and ' . $this->max . ' characters long.';
         }
 
-        return $result;
+        return new ValidatorResult($result, $messages);
     }
 }

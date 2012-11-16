@@ -27,7 +27,7 @@ class InequalityValidator extends AbstractValidator
     protected $operator = self::GREATER_THAN;
 
     protected $compareValue = 0;
-    
+
     public function __construct($operator, $compareValue) {
         $this->operator = (string) $operator;
         $this->compareValue = (float) $compareValue;
@@ -35,7 +35,7 @@ class InequalityValidator extends AbstractValidator
 
     public function isValid($value){
 
-        $this->messages = [];
+        $messages = [];
 
         $result = true;
 
@@ -43,35 +43,35 @@ class InequalityValidator extends AbstractValidator
             case self::GREATER_THAN:
                 if ( ! ($this->compareValue > $value)){
                     $result = false;
-                    $this->messages[] = 'Must be less than ' . $this->compareValue;
+                    $messages[] = 'Must be less than ' . $this->compareValue;
                 }
                 break;
             case self::GREATER_THAN_EQUAL:
                 if ( ! ($this->compareValue >= $value)){
                     $result = false;
-                    $this->messages[] = 'Must be less than or equal to ' . $this->compareValue;
+                    $messages[] = 'Must be less than or equal to ' . $this->compareValue;
                 }
                 break;
             case self::LESS_THAN:
                 if ( ! ($this->compareValue < $value)){
                     $result = false;
-                    $this->messages[] = 'Must be greater than ' . $this->compareValue;
+                    $messages[] = 'Must be greater than ' . $this->compareValue;
                 }
                 break;
             case self::LESS_THAN_EQUAL:
                 if ( ! ($this->compareValue <= $value)){
                     $result = false;
-                    $this->messages[] = 'Must be greater than or equal to ' . $this->compareValue;
+                    $messages[] = 'Must be greater than or equal to ' . $this->compareValue;
                 }
                 break;
             case self::NOT_EQUAL;
                 if ( ! ($this->compareValue != $value)){
                     $result = false;
-                    $this->messages[] = 'Must not be equal to ' . $this->compareValue;
+                    $messages[] = 'Must not be equal to ' . $this->compareValue;
                 }
                 break;
         }
 
-        return $result;
+        return new ValidatorResult($result, $messages);
     }
 }

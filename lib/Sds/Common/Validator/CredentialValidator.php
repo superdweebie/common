@@ -22,25 +22,25 @@ class CredentialValidator extends AbstractValidator
 
     public function isValid($value){
 
-        $this->messages = [];
+        $messages = [];
 
         $result = true;
 
         if ( ! preg_match($this->lengthRegEx, $value)){
             $result = false;
-            $this->messages[] = 'Must be between 6 and 40 characters long.';
+            $messages[] = 'Must be between 6 and 40 characters long.';
         }
 
         if ( ! preg_match($this->containAlphaRegEx, $value)){
             $result = false;
-            $this->messages[] = 'Must contain at least one alpha character.';
+            $messages[] = 'Must contain at least one alpha character.';
         }
 
         if ( ! preg_match($this->containNumRegEx, $value)){
             $result = false;
-            $this->messages[] = 'Must contain at least one numeric character.';
+            $messages[] = 'Must contain at least one numeric character.';
         }
 
-        return $result;
+        return new ValidatorResult($result, $messages);
     }
 }

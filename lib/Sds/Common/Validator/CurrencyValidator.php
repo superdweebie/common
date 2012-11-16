@@ -16,7 +16,7 @@ class CurrencyValidator extends AbstractValidator
 
     public function isValid($value){
 
-        $this->messages = [];
+        $messages = [];
 
         $result = true;
 
@@ -24,9 +24,9 @@ class CurrencyValidator extends AbstractValidator
 
         if ( ! preg_match($regEx, $value)){
             $result = false;
-            $this->messages[] = 'Must be currency format.';
+            $messages[] = 'Must be currency format.';
         }
 
-        return $result;
+        return new ValidatorResult($result, $messages);
     }
 }

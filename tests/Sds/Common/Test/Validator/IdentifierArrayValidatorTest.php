@@ -17,9 +17,9 @@ class IdentifierArrayValidatorTest extends \PHPUnit_Framework_TestCase {
 
         foreach ($testArray as $item) {
             if ($item[0]){
-                $this->assertTrue($validator->isValid($item[1]));
+                $this->assertTrue($validator->isValid($item[1])->getResult());
             } else {
-                $this->assertFalse($validator->isValid($item[1]));
+                $this->assertFalse($validator->isValid($item[1])->getResult());
             }
         }
     }

@@ -16,20 +16,21 @@ class IdentifierArrayValidator extends AbstractValidator
 
     public function isValid($value)
     {
-        $this->messages = [];
+        $messages = [];
 
         $validator = new IdentifierValidator();
         $result = true;
 
         foreach ($value as $name) {
-            if (!$validator->isValid($name)) {
+            $validatorResult = $validator->isValid($name);
+            if ( ! $validatorResult->getResult()) {
                 $result = false;
-                foreach ($validator->getMessages() as $message){
-                    $this->messages[] = $name . ' not valid. ' . $message;
+                foreach ($validatorResult->getMessages() as $message){
+                    $messages[] = $name . ' not valid. ' . $message;
                 }
             }
         }
 
-        return $result;
+        return new ValidatorResult($result, $messages);
     }
 }

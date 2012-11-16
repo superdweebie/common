@@ -22,7 +22,7 @@ class ValidatorGroup extends AbstractValidator
 
     public function isValid($value){
 
-        $this->messages = [];
+        $messages = [];
 
         $result = true;
 
@@ -33,18 +33,19 @@ class ValidatorGroup extends AbstractValidator
             if (! $result && method_exists($validator, 'getSkipOnFail') && $validator->getSkipOnFail()){
                 continue;
             }
-            if ( ! $validator->isValid($value)){
+            $validatorResult = $validator->isValid($value);
+            if ( ! $validatorResult->getResult()){
                 $result = false;
-                $this->messages = array_merge($this->messages, $validator->getMessages());
+                $messages = array_merge($messages, $validatorResult->getMessages());
                 if (method_exists($validator, 'getHaltOnFail') && $validator->getHaltOnFail()){
-                    return $result;
+                    return new ValidatorResult($result, $messages);
                 }
             }
             if (method_exists($validator, 'getHaltOnPass') && $validator->getHaltOnPass()){
-                return $result;
+                return new ValidatorResult($result, $messages);
             }
         }
 
-        return $result;
+        return new ValidatorResult($result, $messages);
     }
 }
