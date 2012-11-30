@@ -14,7 +14,7 @@ namespace Sds\Common\Crypt;
  */
 interface BlockCipherInterface {
 
-    public static function encrypt($painText, $key);
+    public static function encrypt($painText, $key, $salt = null);
 
     public static function decrypt($encryptedText, $key);
 }
