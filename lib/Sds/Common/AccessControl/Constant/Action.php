@@ -33,4 +33,14 @@ class Action {
      * Make a resource disappear, never to come back again!
      */
     const delete = 'delete';
+
+    /**
+     * Update the roles of an identity
+     */
+    const updateRoles = 'updateRoles';
+
+    /**
+     * Update the permissions on a resource
+     */
+    const updatePermissions = 'updatePermissions';
 }

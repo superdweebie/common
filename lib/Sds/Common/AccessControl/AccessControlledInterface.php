@@ -28,7 +28,7 @@ interface AccessControlledInterface{
      *
      * @param array $permissions An array of PermissionInterface objects
      */
-    public function setPermissions(array $permissions);
+    public function setPermissions($permissions);
 
     /**
      * Add a permission to the permissions array
