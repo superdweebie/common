@@ -15,32 +15,39 @@ namespace Sds\Common\State;
 class Transition implements TransitionInterface
 {
 
-    /**
-     *
-     * @var string
-     */
-    protected $fromState;
+    const arrow = '->';
 
     /**
      *
      * @var string
      */
-    protected $toState;
+    protected $from;
 
-    public function __construct($fromState, $toState){
-        $this->fromState = (string) $fromState;
-        $this->toState = (string) $toState;
+    /**
+     *
+     * @var string
+     */
+    protected $to;
+
+    public static function fromString($string){
+        list($from, $to) = explode(self::arrow, $string);
+        return new static($from, $to);
     }
 
-    public function getFromState() {
-        return $this->fromState;
+    public function __construct($from, $to){
+        $this->from = (string) $from;
+        $this->to = (string) $to;
     }
 
-    public function getToState() {
-        return $this->toState;
+    public function getFrom() {
+        return $this->from;
+    }
+
+    public function getTo() {
+        return $this->to;
     }
 
     public function getAction() {
-        return $this->fromState . '-' . $this->toState;
+        return $this->from . self::arrow . $this->to;
     }
 }

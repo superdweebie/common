@@ -20,25 +20,24 @@ interface TransitionInterface
      * @param string $fromState
      * @param string $toState
      */
-    public function __construct($fromState, $toState);
+    public function __construct($from, $to);
 
     /**
      *
      * @return string
      */
-    public function getFromState();
+    public function getFrom();
 
     /**
      *
      * @return string
      */
-    public function getToState();
+    public function getTo();
 
     /**
-     * Return the action name for this transition.
-     * Used for access control
      *
      * @return string
      */
     public function getAction();
+
 }
