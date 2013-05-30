@@ -14,6 +14,6 @@ namespace Sds\Common\AccessControl;
  */
 interface PermissionInterface{
 
-    public function isAllowed(array $roles, $action);
+    public function areAllowed(array $roles, array $action);
 
 }

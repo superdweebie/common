@@ -31,6 +31,9 @@ class Transition implements TransitionInterface
 
     public static function fromString($string){
         list($from, $to) = explode(self::arrow, $string);
+        if (!isset($from) || (!isset($to))){
+            return false;
+        }
         return new static($from, $to);
     }
 
